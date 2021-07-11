@@ -1,0 +1,22 @@
+--- a/.minecraft/options.txt
++++ b/.minecraft/options.txt
+@@ -24,18 +24,19 @@ fov:0.0
+ screenEffectScale:1.0
+ fovEffectScale:1.0
+ gamma:1.0
++renderDistance:12
+ gamma:0.0
+ renderDistance:7
+ entityDistanceScaling:1.0
+ guiScale:0
+ particles:0
+ maxFps:120
+ difficulty:2
+ graphicsMode:1
+ ao:2
+ biomeBlendRadius:2
+ renderClouds:true
+ resourcePacks:[]
+ incompatibleResourcePacks:[]
+ lastServer:
+ lang:en_us

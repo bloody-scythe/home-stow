@@ -1,0 +1,36 @@
+#!syntax bash
+
+# Open terminal
+super + Return
+	alacritty
+
+# super + shift + q
+	xkill
+
+# Kill X server
+super + ctrl + q
+	pkill xinit
+
+# Toggle picom
+super + shift + c	
+	if [ -z $(pgrep picom) ]; then picom & else pkill picom; fi
+
+# Open dmenu_recency
+super + d
+	dmenu_recency
+
+# Open browser
+super + w
+	firefox
+
+# Open htop
+super + shift + h
+	alacritty --title HTOP -e htop
+
+# Open Vifm
+super + v
+	alacritty --title ViFM -e vifm
+
+# Open PCManFm
+super + shift + v
+	pcmanfm

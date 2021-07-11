@@ -1,0 +1,14 @@
+# Append to path
+appendpath () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="$1:$PATH"
+    esac
+}
+
+appendpath "$HOME/bin"
+appendpath "$HOME/.local/bin"
+appendpath "$HOME/git/scripts"
+appendpath "$HOME/go/bin"

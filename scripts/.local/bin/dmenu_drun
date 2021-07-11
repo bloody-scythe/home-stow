@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls /usr/share/applications|sed -e s'/.desktop$//'|dmenu|xargs -I '{}' gtk-launch {}.desktop

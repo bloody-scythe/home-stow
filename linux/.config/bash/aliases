@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Edit configs
+alias ,c='$EDITOR $HOME/.bashrc'
+alias ,a='$EDITOR $BASH_CONFIG/aliases'
+alias ,p='$EDITOR $BASH_CONFIG/path'
+alias ,f='$EDITOR $BASH_CONFIG/functions'
+alias ,s='. ~/.bashrc'
+# Config
+alias ls='ls --color'
+alias ip='ip --color'
+alias grep='grep --color'
+alias df='df -h'
+# alias sed='sed -n'
+
+# Fasd
+if isexec fasd ; then
+	alias j='fasd_cd -d'
+	alias v='fasd -f -e nvim'
+	alias sv='fasd -f -e "sudo nvim"'
+	alias vf='fasd -d -e vifm'
+	alias svf='fasd -d -e "sudo vifm"'
+	alias b='fasd -f -e bat'
+	alias o='fasd -a -e open'
+	alias h='fasd -a -e "handlr open"'
+fi
+
+# Overrides
+if isexec lsd ; then
+	alias ls='lsd -F'
+	alias tree='lsd --tree --color=always'
+fi
+
+alias la='ls -a'
+alias ll='ls -lh'
+alias lla='ls -lah'
+
+alias cls='clear'
+alias lg='lazygit'
+alias pac='sudo pacman'
+alias nc='ncat'
+alias yt-dl='youtube-dl'
+alias clgit='clustergit'
+alias vimwiki='nvim ~/git/vimwiki/index.wiki'
+alias sctl='sudo systemctl'
+alias py='python'
+# alias tb='nc termbin.com 9999'
+alias tb="(exec 3<>/dev/tcp/termbin.com/9999; cat >&3; cat <&3; exec 3<&-)"
+alias suspend='systemctl suspend'
+alias a2='aria2c'
+alias rcopy='rclone copy'

@@ -1,0 +1,14 @@
+#!/bin/bash
+mkcdir () {
+	mkdir -p -- "$1"
+	cd -P -- "$1"
+}
+
+where () {
+	hash "$@" 2> /dev/null
+	hash -t "$@" 2> /dev/null
+}
+
+isexec () {
+	hash "$@" 2> /dev/null
+}

@@ -1,0 +1,11 @@
+--- a/.minecraft/options.txt
++++ b/.minecraft/options.txt
+@@ -12,7 +12,8 @@ invertYMouse:false
+ realmsNotifications:true
+ reducedDebugInfo:false
+ snooperEnabled:false
++showSubtitles:true
+ showSubtitles:false
+ touchscreen:false
+ fullscreen:true
+ bobView:true

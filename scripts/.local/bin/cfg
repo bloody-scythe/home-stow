@@ -1,0 +1,11 @@
+#!/bin/bash
+cfglist="/etc/pacman.conf
+/etc/pacman.d/mirrorlist
+/etc/hosts
+/etc/ssh/sshd_config
+/etc/X11/xorg.conf.d/30-touchpad.conf
+/etc/X11/xorg.conf.d/10-amdgpu.conf
+"
+
+cfg=$(echo "$cfglist"|fzf -0 -1 --query ${*:-""})
+[ ! -z "$cfg" ] && $EDITOR $cfg
