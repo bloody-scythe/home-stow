@@ -1,0 +1,9 @@
+#!/bin/bash
+
+alias ,as="$EDITOR $BASH_CONFIG/*-autostart"
+
+# Launch ssh-agent
+pgrep ssh-agent > /dev/null || eval $(ssh-agent) > /dev/null
+
+# Config fasd
+isexec fasd && eval "$(fasd --init auto)"

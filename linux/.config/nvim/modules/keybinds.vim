@@ -14,6 +14,12 @@
 	nnoremap <leader>lg :!lazygit<cr><cr>
 	nnoremap <leader>vd :!vidir<cr><cr>
 
+" Cargo terminal
+	nnoremap <leader>cr :w<cr>:bot split term://cargo run<cr>
+	nnoremap <leader>cc :w<cr>:bot split term://cargo check<cr>
+	nnoremap <leader>cb :w<cr>:bot split term://cargo build<cr>
+	nnoremap <leader>cf gg:.,$!rustfmt<cr><cr>
+
 " Shell on line
 	nnoremap <leader>sd :.!date<cr>
 	nnoremap <leader>sbb :.!base64<cr>

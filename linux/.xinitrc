@@ -4,7 +4,6 @@
 # export QT_IM_MODULE=fcitx
 # export XIM_PROGRAM=/usr/bin/fcitx
 
-export EDITOR=nvim
 export XEDITOR=st -e nvim
 export BROWSER=firefox
 
@@ -21,12 +20,5 @@ udiskie -t -N &
 blueman-applet &
 fcitx &
 sxhkd &
-
-if [ -d ~/.config/autostart ] ; then
- for f in ~/.config/autostart/* ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
 
 exec dwm

@@ -139,7 +139,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 	\ {Display in mpv} mpv %f,
 
 	filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.ico,*.tga chafa %f
-	fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.ico,*.tga icat -w %pw %c
+	" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.ico,*.tga icat -w %pw %c
 "	fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.ico,*.tga viu -w %pw %c
 
 	" Keepass database

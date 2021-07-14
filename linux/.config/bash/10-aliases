@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Edit configs
-alias ,c='$EDITOR $HOME/.bashrc'
-alias ,a='$EDITOR $BASH_CONFIG/aliases'
-alias ,p='$EDITOR $BASH_CONFIG/path'
-alias ,f='$EDITOR $BASH_CONFIG/functions'
-alias ,s='. ~/.bashrc'
+alias ,a="$EDITOR $BASH_CONFIG/*-aliases"
+
 # Config
 alias ls='ls --color'
 alias ip='ip --color'
@@ -41,8 +37,6 @@ alias pac='sudo pacman'
 alias nc='ncat'
 alias yt-dl='youtube-dl'
 alias clgit='clustergit'
-alias vimwiki='nvim ~/git/vimwiki/index.wiki'
-alias sctl='sudo systemctl'
 alias py='python'
 # alias tb='nc termbin.com 9999'
 alias tb="(exec 3<>/dev/tcp/termbin.com/9999; cat >&3; cat <&3; exec 3<&-)"

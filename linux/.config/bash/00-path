@@ -1,4 +1,7 @@
-# Append to path
+#!/bin/bash
+
+alias ,p="$EDITOR $BASH_CONFIG/*-path"
+
 appendpath () {
     case ":$PATH:" in
         *:"$1":*)
@@ -8,7 +11,6 @@ appendpath () {
     esac
 }
 
+appendpath "$HOME/go/bin"
 appendpath "$HOME/bin"
 appendpath "$HOME/.local/bin"
-appendpath "$HOME/git/scripts"
-appendpath "$HOME/go/bin"

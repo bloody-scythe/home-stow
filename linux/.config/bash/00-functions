@@ -1,4 +1,7 @@
 #!/bin/bash
+
+alias ,f="$EDITOR $BASH_FOLDER/*-functions"
+
 mkcdir () {
 	mkdir -p -- "$1"
 	cd -P -- "$1"

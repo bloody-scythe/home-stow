@@ -6,7 +6,6 @@ super + Return
 
 # super + shift + q
 	xkill
-
 # Kill X server
 super + ctrl + q
 	pkill xinit
@@ -34,3 +33,7 @@ super + v
 # Open PCManFm
 super + shift + v
 	pcmanfm
+
+# Autoclicker
+super + KP_Insert
+	if [ -z $(pgrep autoclicker) ]; then autoclicker & else pkill autoclicker; fi

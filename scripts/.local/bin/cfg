@@ -1,4 +1,7 @@
 #!/bin/bash
+
+EDITOR=${EDITOR:-"nvim"}
+
 cfglist="/etc/pacman.conf
 /etc/pacman.d/mirrorlist
 /etc/hosts
