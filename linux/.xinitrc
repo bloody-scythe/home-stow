@@ -1,8 +1,8 @@
 #!/bin/bash
-# export GTK_IM_MODULE=fcitx
-# export XMODIFIERS=@im=fcitx
-# export QT_IM_MODULE=fcitx
-# export XIM_PROGRAM=/usr/bin/fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export XIM_PROGRAM=/usr/bin/fcitx
 
 export XEDITOR=st -e nvim
 export BROWSER=firefox
@@ -15,7 +15,7 @@ pa-applet &
 nm-applet &
 picom &
 xfce4-power-manager &
-xfce4-clipman &
+parcellite &
 udiskie -t -N &
 blueman-applet &
 fcitx &

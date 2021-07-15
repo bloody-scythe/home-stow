@@ -8,6 +8,8 @@ export BROWSER=/usr/bin/elinks
 export SAFE=$HOME/git/secret/safe
 export CHROOT=$HOME/chroot
 
+export GPG_TTY=`tty`
+
 # Bash configuration
 	# Config prompt
 	PS1="\[\033[38;5;34m\]\u\[$(tput sgr0)\]\[\033[38;5;3m\]@\[$(tput sgr0)\]\h \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"

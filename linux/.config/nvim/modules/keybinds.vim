@@ -38,6 +38,11 @@
 " vim-fugitive
 	nnoremap <leader>g :G<cr>
 
+" Vimwiki
+	nnoremap <leader>x glx
+	nnoremap <leader>= glp
+	nnoremap <leader>- gln
+
 " FZF
 	nnoremap <leader>ff :Files<cr>
 	nnoremap <leader>fF :Filetypes<cr>

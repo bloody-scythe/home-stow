@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias ,a="$EDITOR $BASH_CONFIG/*-aliases"
+alias ,a="$EDITOR $BASH_FOLDER/*-aliases"
 
 # Config
 alias ls='ls --color'

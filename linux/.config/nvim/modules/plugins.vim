@@ -10,9 +10,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-eunuch'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'vimwiki/vimwiki'
-	" Plug 'dhruvasagar/vim-table-mode'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
+	Plug 'jamessan/vim-gnupg'
+	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+	" Plug 'dhruvasagar/vim-table-mode'
 	" Plug 'mattn/emmet-vim'
 	" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} "Disable if slow
 	" Plug 'liuchengxu/vim-which-key'
@@ -39,4 +41,14 @@ call plug#end()
 	let g:gitgutter_enable = 1
 
 	" Vimwiki
-	let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki'}]
+	let wiki = {}
+	let wiki.path = '~/vimwiki/'
+	" let wiki.syntax = 'markdown'
+	" let wiki.ext = '.md'
+	let wiki.nested_syntaxes = {'bash' : 'bash', 'python': 'python', 'c++': 'cpp'}
+	let wiki.inks_space_char = '_'
+
+	let g:vimwiki_list = [wiki]
+	let g:vimwiki_global_ext=0
+
+	" let g:vimwiki_listsyms = '✗○◐●✓'
