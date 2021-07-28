@@ -49,6 +49,6 @@ call plug#end()
 	let wiki.inks_space_char = '_'
 
 	let g:vimwiki_list = [wiki]
-	let g:vimwiki_global_ext=0
+	" let g:vimwiki_global_ext=0
 
 	" let g:vimwiki_listsyms = '✗○◐●✓'

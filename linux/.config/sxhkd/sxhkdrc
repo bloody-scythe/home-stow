@@ -1,18 +1,24 @@
 #!syntax bash
 
+# Reset sxhkd
+super + shift + s
+	pkill -10 sxhkd
+
 # Open terminal
 super + Return
-	alacritty
+	st
 
-# super + shift + q
-	xkill
 # Kill X server
-super + ctrl + q
+super + control + q
 	pkill xinit
+
+# Force kill current program
+super + shift + q
+	kill -9 $(xdotool getwindowfocus getwindowpid)
 
 # Toggle picom
 super + shift + c	
-	if [ -z $(pgrep picom) ]; then picom & else pkill picom; fi
+	if [ -z $(pgrep picom) ]; then picom -b else pkill picom; fi
 
 # Open dmenu_recency
 super + d
@@ -20,20 +26,29 @@ super + d
 
 # Open browser
 super + w
+	qutebrowser
+
+super + shift + w
 	firefox
 
 # Open htop
 super + shift + h
-	alacritty --title HTOP -e htop
+	st -e htop
 
 # Open Vifm
 super + v
-	alacritty --title ViFM -e vifm
+	st -e vifm
 
 # Open PCManFm
 super + shift + v
 	pcmanfm
 
+# Vimwiki
+super + n
+	st -e nvim -c VimwikiIndex
+
 # Autoclicker
 super + KP_Insert
 	if [ -z $(pgrep autoclicker) ]; then autoclicker & else pkill autoclicker; fi
+super + KP_Delete
+	time=0.1 autoclicker

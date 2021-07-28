@@ -8,6 +8,7 @@ export BROWSER=/usr/bin/elinks
 export SAFE=$HOME/git/secret/safe
 export CHROOT=$HOME/chroot
 
+export ARCH=$(uname -m)
 export GPG_TTY=`tty`
 
 # Bash configuration
