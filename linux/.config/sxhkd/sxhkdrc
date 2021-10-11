@@ -6,7 +6,7 @@ super + shift + s
 
 # Open terminal
 super + Return
-	st
+	$TERMINAL
 
 # Kill X server
 super + control + q
@@ -16,9 +16,23 @@ super + control + q
 super + shift + q
 	kill -9 $(xdotool getwindowfocus getwindowpid)
 
+# Control audio
+super + equal
+	pamixer -i 5 --allow-boost
+super + minus
+	pamixer -d 5 --allow-boost
+super + plus
+	pamixer -t
+
+# Control backlight
+XF86MonBrightnessUp
+	light +
+XF86MonBrightnessDown
+	light -
+
 # Toggle picom
-super + shift + c	
-	if [ -z $(pgrep picom) ]; then picom -b else pkill picom; fi
+super + shift + c
+	if pgrep picom; then pkill picom ; else picom -b ; fi
 
 # Open dmenu_recency
 super + d
@@ -26,29 +40,40 @@ super + d
 
 # Open browser
 super + w
-	qutebrowser
+	firefox
 
 super + shift + w
-	firefox
+	qutebrowser
+
+# Open pulsemixer
+super + a
+	$TERMINAL -e pulsemixer
 
 # Open htop
 super + shift + h
-	st -e htop
+	$TERMINAL -e htop
 
 # Open Vifm
 super + v
-	st -e vifm
+	$TERMINAL -e vifm
 
 # Open PCManFm
 super + shift + v
 	pcmanfm
 
+# Run screen script
+super + s
+	screen
+
 # Vimwiki
 super + n
-	st -e nvim -c VimwikiIndex
+	$TERMINAL -e nvim -c VimwikiIndex
 
 # Autoclicker
 super + KP_Insert
-	if [ -z $(pgrep autoclicker) ]; then autoclicker & else pkill autoclicker; fi
+	if pgrep autoclicker; then pkill autoclicker & else autoclicker; fi
 super + KP_Delete
 	time=0.1 autoclicker
+
+@Print
+	cd ~/Pictures && scrot

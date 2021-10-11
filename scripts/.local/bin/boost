@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo freeram
+
+#Stop unnecessary services
+sudo systemctl stop syncthing@$USER.service

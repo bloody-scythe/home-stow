@@ -117,7 +117,6 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 	" Windows executable
 	filetype *.exe
-	\ {Run with proton} proton_run %c,
 	\ {Run with wine} wine %c,
 
 	" Man page

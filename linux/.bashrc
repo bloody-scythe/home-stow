@@ -3,6 +3,7 @@ alias ,s='. ~/.bashrc' # Source bashrc
 alias ,c='$EDITOR $HOME/.bashrc' # Edit bashrc
 
 # Environment
+export TERMINAL=/usr/local/bin/st
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/elinks
 export SAFE=$HOME/git/secret/safe

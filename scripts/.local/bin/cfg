@@ -5,10 +5,12 @@ EDITOR=${EDITOR:-"nvim"}
 cfglist="/etc/pacman.conf
 /etc/pacman.d/mirrorlist
 /etc/hosts
+/etc/pulse/default.pa
 /etc/ssh/sshd_config
 /etc/X11/xorg.conf.d/30-touchpad.conf
 /etc/clamav/clamd.conf
-/etc/X11/xorg.conf.d/10-amdgpu.conf"
+/etc/bluetooth/main.conf
+/etc/X11/xorg.conf.d/20-amdgpu.conf"
 
 cfg=$(echo "$cfglist"|fzf -0 -1 --query ${*:-""})
 [ ! -z "$cfg" ] && $EDITOR $cfg

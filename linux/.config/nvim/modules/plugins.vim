@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'jamessan/vim-gnupg'
 	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 	" Plug 'dhruvasagar/vim-table-mode'
-	" Plug 'mattn/emmet-vim'
+	Plug 'mattn/emmet-vim'
 	" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} "Disable if slow
 	" Plug 'liuchengxu/vim-which-key'
 
@@ -42,7 +42,7 @@ call plug#end()
 
 	" Vimwiki
 	let wiki = {}
-	let wiki.path = '~/vimwiki/'
+	let wiki.path = '~/Sync/vimwiki/'
 	" let wiki.syntax = 'markdown'
 	" let wiki.ext = '.md'
 	let wiki.nested_syntaxes = {'bash' : 'bash', 'python': 'python', 'c++': 'cpp'}

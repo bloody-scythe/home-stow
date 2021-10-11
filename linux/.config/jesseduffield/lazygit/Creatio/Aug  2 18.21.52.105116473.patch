@@ -1,0 +1,10 @@
+--- a/.minecraft/options.txt
++++ b/.minecraft/options.txt
+@@ -45,7 +45,6 @@ backgroundForChatOnly:true
+ hideServerAddress:false
+ advancedItemTooltips:true
+ pauseOnLostFocus:true
+-pauseOnLostFocus:false
+ overrideWidth:0
+ overrideHeight:0
+ heldItemTooltips:true
