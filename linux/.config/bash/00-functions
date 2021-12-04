@@ -12,13 +12,9 @@ where () {
 	hash -t "$@" 2> /dev/null
 }
 
-isexec () {
-	hash "$@" 2> /dev/null
-}
+isexec () { hash "$@" 2> /dev/null; }
 
-isint () {
-	[ "$1" -eq "$1" ] 2> /dev/null
-}
+isint () { [ "$1" -eq "$1" ] 2> /dev/null; }
 
 vimwiki () {
 	if [[ $# == 0 ]]
@@ -30,4 +26,12 @@ vimwiki () {
 	else
 	echo 'Usage: vimwiki [git] [args ...]'
 	fi
+}
+
+quote () {
+	local quoted=${1//\'/\'\\\'\'};
+	printf "'%s'" "$quoted"
+}
+dequote () {
+	eval printf %s "$1" 2> /dev/null
 }

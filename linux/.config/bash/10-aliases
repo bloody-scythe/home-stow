@@ -33,7 +33,6 @@ alias lla='ls -lah'
 
 alias cls='clear'
 alias lg='lazygit'
-alias pac='sudo pacman'
 alias nc='ncat'
 alias ytdl='youtube-dl'
 alias clgit='clustergit'
@@ -44,3 +43,4 @@ alias suspend='systemctl suspend'
 alias a2='aria2c'
 alias rcopy='rclone copy'
 alias bt='bluetoothctl'
+alias luai="LUA_INIT=@$HOME/.config/lua/init.lua lua -i"

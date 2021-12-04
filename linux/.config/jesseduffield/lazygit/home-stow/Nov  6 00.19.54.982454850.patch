@@ -1,0 +1,14 @@
+--- a/linux/.xinitrc
++++ b/linux/.xinitrc
+@@ -16,10 +16,11 @@ picom &
+ cbatticon -x "systemctl suspend" &
+ parcellite &
+ udiskie -t -N &
+ fcitx &
++# fcitx &
+ 
+ numlockx on
+ 
+ xrandr --output HDMI-A-0 --off --output eDP --primary --mode 1366x768 --pos 0x0 --rotate normal --output DisplayPort-0 --off
+ 
+ exec dwm

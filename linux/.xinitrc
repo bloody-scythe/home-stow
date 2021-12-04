@@ -1,26 +1,54 @@
 #!/bin/bash
+
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export XIM_PROGRAM=/usr/bin/fcitx
 
-export XEDITOR="st -e nvim"
 export BROWSER=firefox
 
-nitrogen --restore
-setxkbmap -option "terminate:ctrl_alt_bksp"
-
-pa-applet &
-nm-applet &
-picom &
-cbatticon -x "systemctl suspend" &
-parcellite &
-udiskie -t -N &
-fcitx &
-sxhkd &
+otd & #tablet driver
+sxhkd -m -1 & #keybindings
+nitrogen --restore #load wallpaper
 
 numlockx on
+setxkbmap br nodeadkeys
+setxkbmap -option "terminate:ctrl_alt_bksp"
 
-xrandr --output HDMI-A-0 --off --output eDP --primary --mode 1366x768 --pos 0x0 --rotate normal --output DisplayPort-0 --off
+exec=${exec:-dwm}
+case $exec in
+dwm)
+	picom -b
+	dwm_bar &
+	pa-applet &
+	nm-applet &
+	cbatticon -x "systemctl suspend" &
+	parcellite &
+	udiskie -t -N &
+	fcitx -d
+	exec dwm
+	;;
 
-exec dwm
+openbox)
+	picom -b
+	bmpanel2 --theme=transpy &
+	pa-applet &
+	nm-applet &
+	cbatticon -x "systemctl suspend" &
+	parcellite &
+	udiskie -t -N &
+	fcitx -d
+	exec openbox
+	;;
+
+qtile)
+	exec qtile start
+	;;
+
+clean|clear)
+	exec dwm
+	;;
+*)
+	exec $exec
+	;;
+esac

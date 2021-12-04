@@ -14,8 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'jamessan/vim-gnupg'
 	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-	" Plug 'dhruvasagar/vim-table-mode'
 	Plug 'mattn/emmet-vim'
+	Plug 'mattn/calendar-vim'
+	" Plug 'dhruvasagar/vim-table-mode'
 	" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} "Disable if slow
 	" Plug 'liuchengxu/vim-which-key'
 
@@ -41,8 +42,11 @@ call plug#end()
 	let g:gitgutter_enable = 1
 
 	" Vimwiki
+	let g:vimwiki_folding='list'
+	" let g:vimwiki_folding='expr'
+
 	let wiki = {}
-	let wiki.path = '~/Sync/vimwiki/'
+	let wiki.path = '~/vimwiki/'
 	" let wiki.syntax = 'markdown'
 	" let wiki.ext = '.md'
 	let wiki.nested_syntaxes = {'bash' : 'bash', 'python': 'python', 'c++': 'cpp'}
@@ -50,5 +54,41 @@ call plug#end()
 
 	let g:vimwiki_list = [wiki]
 	" let g:vimwiki_global_ext=0
-
+	let g:vimwiki_ext2syntax = {'.wiki': 'default'}
 	" let g:vimwiki_listsyms = '✗○◐●✓'
+	function! VimwikiFindIncompleteTasks()
+		lvimgrep /- \[ \]/ %:p
+		lopen
+	endfunction
+
+	function! VimwikiFindAllIncompleteTasks()
+		VimwikiSearch /- \[ \]/
+		lopen
+	endfunction
+
+	nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+	nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
+
+	function! VimwikiLinkHandler(link)
+	" Use sxiv to open external images.  E.g.:
+	"   1) [[sxiv:path/to/image.png]]
+	let link = a:link
+	if link =~# '^ifile:'
+	 let link = link[1:]
+	else
+	 return 0
+	endif
+	let link_infos = vimwiki#base#resolve_link(link)
+	if link_infos.filename == ''
+	 echomsg 'Vimwiki Error: Unable to resolve link!'
+	 return 0
+	else
+	 " exe 'tabnew ' . fnameescape(link_infos.filename)
+	 call system("sxiv " . fnameescape(link_infos.filename) . " &")
+	 return 1
+	endif
+	endfunction
+
+	"Calendar
+	let g:calendar_no_mappings=1
+

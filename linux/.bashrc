@@ -5,12 +5,14 @@ alias ,c='$EDITOR $HOME/.bashrc' # Edit bashrc
 # Environment
 export TERMINAL=/usr/local/bin/st
 export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/elinks
+export BROWSER=/usr/bin/chromium
 export SAFE=$HOME/git/secret/safe
 export CHROOT=$HOME/chroot
 
 export ARCH=$(uname -m)
 export GPG_TTY=`tty`
+
+export LUA_PATH="$HOME/git/lua/?.lua;;"
 
 # Bash configuration
 	# Config prompt
@@ -25,7 +27,7 @@ export GPG_TTY=`tty`
 	# HISTFILE=~/.config/bash/history
 
 # Load source files
-export BASH_FOLDER=${XDG_CONFIG_HOME:-"$HOME/.config/bash"}
+export BASH_FOLDER="$HOME/.config/bash"
 
 if [ -d $BASH_FOLDER ] ; then
 	for f in $BASH_FOLDER/* ; do

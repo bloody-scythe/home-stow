@@ -221,7 +221,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 	nnoremap slg :!lazygit<cr>
 	nnoremap sdu :!ncdu<cr>
-	nnoremap svi :!vim<cr> 
+	nnoremap svi :!vim -p %f<cr> 
 	nnoremap ssh :shell<cr>
 	nnoremap svd :!vidir<cr>
 	

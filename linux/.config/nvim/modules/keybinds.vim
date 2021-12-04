@@ -1,5 +1,6 @@
 " Basic
 	let mapleader = "\<space>"
+	nnoremap <esc> :noh<return><esc>
 
 	nnoremap ,c :tabnew $MYVIMRC<cr>
 	nnoremap ,k :tabnew ~/.config/nvim/modules/keybinds.vim<cr>
@@ -56,3 +57,8 @@
 	nnoremap <leader>fc :Commands<cr>
 	nnoremap <leader>fC :Colors<cr>
 	nnoremap <leader>fw :Windows<cr>
+	nnoremap <leader>fr :Rg<space>
+
+" Calendar
+	nnoremap <leader>cal :Calendar<cr>:vert resize25<cr>
+	nnoremap <leader>cah :CalendarH<cr>

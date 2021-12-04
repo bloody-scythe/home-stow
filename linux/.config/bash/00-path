@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias ,p="$EDITOR $BASH_CONFIG/*-path"
+alias ,p="$EDITOR $BASH_FOLDER/*-path"
 
 appendpath () {
     case ":$PATH:" in
@@ -11,6 +11,8 @@ appendpath () {
     esac
 }
 
+appendpath "$HOME/git/scripts"
 appendpath "$HOME/go/bin"
 appendpath "$HOME/bin"
+appendpath "$HOME/Games"
 appendpath "$HOME/.local/bin"

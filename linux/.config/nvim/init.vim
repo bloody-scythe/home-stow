@@ -32,14 +32,17 @@ endif
 	" set clipboard=unnamedplus     " Copy/paste to clipboard
 
 "       Foldeing config
+
+	set foldmethod=syntax
+	" set foldmethod=indent
+
 	set foldlevel=99
 	set foldcolumn=3
 
-	set foldmethod=indent
 
-	function! CustomFold()
-	  return printf('❄️ %6d%s', v:foldend - v:foldstart + 1, getline(v:foldstart))
-	endfunction
+	" function! CustomFold()
+	"   return printf('❄️ %6d%s', v:foldend - v:foldstart + 1, getline(v:foldstart))
+	" endfunction
 
 	set fillchars=fold:\ | set foldtext=CustomFold() 
 
@@ -49,6 +52,9 @@ endif
 	let g:netrw_banner = 0			"Hide banner
 	let g:netrw_keepdir = 0
 	hi! link netrwMarkFile Search		"Highlight marked files
+	"Calendar
+	let g:calendar_no_mappings=1
+
 
 "	# Syntax for files
 	autocmd BufNewFile,BufRead *.xxd set syntax=xxd

@@ -8,15 +8,33 @@ super + shift + s
 super + Return
 	$TERMINAL
 
+# Open text editor with sxhkrc
+super + slash
+	$TERMINAL -e nvim ~/.config/sxhkd/sxhkdrc
 # Kill X server
 super + control + q
 	pkill xinit
+
+# kill window
+# super + q
+# 	xdo close $(xdo id)
+
+# toggle fullscreen
+super + shift + f
+	xdotool getwindowfocus windowstate --toggle FULLSCREEN
 
 # Force kill current program
 super + shift + q
 	kill -9 $(xdotool getwindowfocus getwindowpid)
 
-# Control audio
+# Control audio volume
+XF86AudioRaiseVolume
+	pamixer -i 5
+XF86AudioLowerVolume
+	pamixer -d 5
+XF86AudioMute
+	pamixer -t
+
 super + equal
 	pamixer -i 5 --allow-boost
 super + minus
@@ -30,20 +48,29 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	light -
 
+# Manage networking
+super + n
+	networkmanager_dmenu
 # Toggle picom
 super + shift + c
 	if pgrep picom; then pkill picom ; else picom -b ; fi
 
-# Open dmenu_recency
+# Open program
 super + d
 	dmenu_recency
+super + p
+	rofi -show drun
 
 # Open browser
 super + w
-	firefox
+	chromium
 
 super + shift + w
 	qutebrowser
+
+# Buku fast open
+super + shift + b
+	buku-fast --rofi
 
 # Open pulsemixer
 super + a
@@ -65,8 +92,12 @@ super + shift + v
 super + s
 	screen
 
+# Change keyboard layout
+super + shift + m
+	key_menu
+
 # Vimwiki
-super + n
+super + shift + n
 	$TERMINAL -e nvim -c VimwikiIndex
 
 # Autoclicker
@@ -77,3 +108,7 @@ super + KP_Delete
 
 @Print
 	cd ~/Pictures && scrot
+
+# Open togame launcher
+super + shift + g
+	togame -d
