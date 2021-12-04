@@ -6,10 +6,9 @@ alias ,c='$EDITOR $HOME/.bashrc' # Edit bashrc
 export TERMINAL=/usr/local/bin/st
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/chromium
-export SAFE=$HOME/git/secret/safe
-export CHROOT=$HOME/chroot
 
 export ARCH=$(uname -m)
+export TERM_COLORS="$(tput colors)"
 export GPG_TTY=`tty`
 
 export LUA_PATH="$HOME/git/lua/?.lua;;"
