@@ -22,10 +22,10 @@
 	set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " === What should be saved automatically between vifm sessions
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bmarks
-" set vifminfo=dhistory,chistory,state,tui,shistory,
+" set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 "     \phistory,fhistory,dirstack,registers,bmarks
+set vifminfo=dhistory,chistory,state,tui,shistory,
+    \phistory,fhistory,dirstack,registers,bmarks
 
 " === Select colorscheme
 	let $_ = system('tput colors')

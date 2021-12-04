@@ -18,30 +18,37 @@ setxkbmap -option "terminate:ctrl_alt_bksp"
 exec=${exec:-dwm}
 case $exec in
 dwm)
-	picom -b
 	dwm_bar &
+	picom -b
 	pa-applet &
 	nm-applet &
 	cbatticon -x "systemctl suspend" &
 	parcellite &
-	udiskie -t -N &
+	udiskie -t -f "${TERMINAL:-st} -e vifm" &
 	fcitx -d
 	exec dwm
 	;;
 
 openbox)
-	picom -b
 	bmpanel2 --theme=transpy &
+	picom -b
 	pa-applet &
 	nm-applet &
 	cbatticon -x "systemctl suspend" &
 	parcellite &
-	udiskie -t -N &
+	udiskie -t -f "${TERMINAL:-st} -e vifm" &
 	fcitx -d
 	exec openbox
 	;;
 
 qtile)
+	picom -b
+	pa-applet &
+	nm-applet &
+	cbatticon -x "systemctl suspend" &
+	parcellite &
+	udiskie -t -f "${TERMINAL:-st} -e vifm" &
+	fcitx -d
 	exec qtile start
 	;;
 

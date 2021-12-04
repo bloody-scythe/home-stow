@@ -55,6 +55,10 @@ super + n
 super + shift + c
 	if pgrep picom; then pkill picom ; else picom -b ; fi
 
+# Open mount manager (uses udisks2)
+super + shift + m
+	st -e bashmount
+
 # Open program
 super + d
 	dmenu_recency
@@ -93,7 +97,7 @@ super + s
 	screen
 
 # Change keyboard layout
-super + shift + m
+super + semicolon
 	key_menu
 
 # Vimwiki
