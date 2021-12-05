@@ -5,13 +5,14 @@ alias ,c='$EDITOR $HOME/.bashrc' # Edit bashrc
 # Environment
 export TERMINAL=/usr/local/bin/st
 export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/chromium
+export BROWSER=/usr/bin/elinks
 
 export ARCH=$(uname -m)
 export TERM_COLORS="$(tput colors)"
 export GPG_TTY=`tty`
 
-export LUA_PATH="$HOME/git/lua/?.lua;;"
+export LUA_PATH="$HOME/git/lua-libs/?.lua;;"
+export PYTHONPATH="$HOME/git/python-libs"
 
 # Bash configuration
 	# Config prompt

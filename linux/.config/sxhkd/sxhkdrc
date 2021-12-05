@@ -17,7 +17,7 @@ super + control + q
 
 # kill window
 # super + q
-# 	xdo close $(xdo id)
+	xdo close
 
 # toggle fullscreen
 super + shift + f
@@ -25,7 +25,7 @@ super + shift + f
 
 # Force kill current program
 super + shift + q
-	kill -9 $(xdotool getwindowfocus getwindowpid)
+	kill -9 $(xdo pid)
 
 # Control audio volume
 XF86AudioRaiseVolume
@@ -108,7 +108,7 @@ super + shift + n
 super + KP_Insert
 	if pgrep autoclicker; then pkill autoclicker & else autoclicker; fi
 super + KP_Delete
-	time=0.1 autoclicker
+	if pgrep autoclicker; then pkill autoclicker & else time='0.1' autoclicker; fi
 
 @Print
 	cd ~/Pictures && scrot

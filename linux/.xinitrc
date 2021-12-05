@@ -5,7 +5,8 @@ export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export XIM_PROGRAM=/usr/bin/fcitx
 
-export BROWSER=firefox
+export BROWSER=/usr/bin/chromium
+export XMENU="rofi -dmenu"
 
 otd & #tablet driver
 sxhkd -m -1 & #keybindings
