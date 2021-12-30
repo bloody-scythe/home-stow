@@ -22,7 +22,6 @@ dwm)
 	dwm_bar &
 	picom -b
 	pa-applet &
-	nm-applet &
 	cbatticon -x "systemctl suspend" &
 	parcellite &
 	udiskie -t -f "${TERMINAL:-st} -e vifm" &
@@ -34,7 +33,6 @@ openbox)
 	bmpanel2 --theme=transpy &
 	picom -b
 	pa-applet &
-	nm-applet &
 	cbatticon -x "systemctl suspend" &
 	parcellite &
 	udiskie -t -f "${TERMINAL:-st} -e vifm" &
@@ -54,6 +52,7 @@ qtile)
 	;;
 
 clean|clear)
+	dwm_bar &
 	exec dwm
 	;;
 *)

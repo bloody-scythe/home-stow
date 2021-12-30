@@ -109,7 +109,9 @@ super + KP_Insert
 	if pgrep autoclicker; then pkill autoclicker & else autoclicker; fi
 super + KP_Delete
 	if pgrep autoclicker; then pkill autoclicker & else time='0.1' autoclicker; fi
-
+supe + KP_End
+	
+# Screenshot
 @Print
 	cd ~/Pictures && scrot
 

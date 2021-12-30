@@ -7,6 +7,10 @@
 	nnoremap ,p :tabnew ~/.config/nvim/modules/plugins.vim<cr>
 	nnoremap ,s :source ~/.config/nvim/init.vim<cr>
 
+" create local quickfix
+   nnoremap <leader>td :lvimgrep TODO %<cr>
+   nnoremap <leader>fm :lvimgrep FIXME %<cr>
+
 	nnoremap <leader>ee :Lexplore<cr>
 	nnoremap <leader>et :Texplore<cr>
 	nnoremap <leader>sh :bot split<cr>:terminal<cr>:resize10<cr>

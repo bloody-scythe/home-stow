@@ -30,6 +30,9 @@ endif
 	set noswapfile			" No swap
 	set clipboard+=unnamed
 	set path+=**			" Searches current directory recursively.
+	set tabstop=4
+   set shiftwidth=4
+   set expandtab
 	set wildmenu			" Display all matches when tab complete.
 	set incsearch			" Incremental search
 	set hidden			" Needed to keep multiple buffers open
