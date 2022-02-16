@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 	Plug 'mattn/emmet-vim'
 	Plug 'mattn/calendar-vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} "Autocomplete
 	" Plug 'dhruvasagar/vim-table-mode'
 	" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} "Disable if slow
 	" Plug 'liuchengxu/vim-which-key'
@@ -92,3 +93,6 @@ call plug#end()
 	"Calendar
 	let g:calendar_no_mappings=1
 
+    "Semshi
+    let g:python3_host_prog = '/usr/bin/python3'
+    nnoremap <leader>sr :Semshi rename

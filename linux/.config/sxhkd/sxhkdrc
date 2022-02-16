@@ -118,3 +118,7 @@ supe + KP_End
 # Open togame launcher
 super + shift + g
 	togame -d
+
+# Play youtube
+super + y
+    yt -r

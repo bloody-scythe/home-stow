@@ -7,6 +7,8 @@
 	nnoremap ,p :tabnew ~/.config/nvim/modules/plugins.vim<cr>
 	nnoremap ,s :source ~/.config/nvim/init.vim<cr>
 
+    nnoremap <leader>rr :!./%<cr>
+
 " create local quickfix
    nnoremap <leader>td :lvimgrep TODO %<cr>
    nnoremap <leader>fm :lvimgrep FIXME %<cr>
@@ -66,3 +68,4 @@
 " Calendar
 	nnoremap <leader>cal :Calendar<cr>:vert resize25<cr>
 	nnoremap <leader>cah :CalendarH<cr>
+

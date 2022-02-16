@@ -202,7 +202,7 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 
 " === Remaps 
 	noremap i   :!vim %f -p<cr>
-	noremap o   :!xdg-open %f<cr>
+	noremap o   :!fopen %f<cr>
 	noremap O   :file<cr>
 	noremap dr  :!dragon-drag-and-drop -x -a %f<cr>
 	noremap zip :!zip -r %c".zip" %f<cr>

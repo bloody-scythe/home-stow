@@ -9,12 +9,17 @@ export BROWSER=/usr/bin/chromium
 export XMENU="rofi -dmenu"
 
 otd & #tablet driver
-sxhkd -m -1 & #keybindings
+sxhkd -m 1 & #keybindings
 nitrogen --restore #load wallpaper
 
 numlockx on
 setxkbmap br nodeadkeys
 setxkbmap -option "terminate:ctrl_alt_bksp"
+
+# Configure bell
+# pactl upload-sample /usr/share/sounds/freedesktop/stereo/bell.oga bell-window-system
+pactl upload-sample /usr/share/sounds/freedesktop/stereo/message.oga bell-window-system
+pactl load-module module-x11-bell display=$DISPLAY
 
 exec=${exec:-dwm}
 case $exec in

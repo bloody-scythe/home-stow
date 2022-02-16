@@ -8,6 +8,7 @@ endif
 	source ~/.config/nvim/modules/plugins.vim
 	source ~/.config/nvim/modules/keybinds.vim
 	source ~/.config/nvim/modules/quickfix.vim
+	source ~/.config/nvim/modules/coc.vim
 
 " Config
 " 	# Appearence
@@ -23,6 +24,8 @@ endif
 	set relativenumber
 
 	set nocompatible
+    set cmdheight=2
+    set shortmess+=c
 	set updatetime=100
 	set timeoutlen=500
 	set autochdir
@@ -31,8 +34,8 @@ endif
 	set clipboard+=unnamed
 	set path+=**			" Searches current directory recursively.
 	set tabstop=4
-   set shiftwidth=4
-   set expandtab
+    set shiftwidth=4
+    set expandtab
 	set wildmenu			" Display all matches when tab complete.
 	set incsearch			" Incremental search
 	set hidden			" Needed to keep multiple buffers open
@@ -47,6 +50,12 @@ endif
 
 	set foldlevel=99
 	set foldcolumn=3
+
+    " if has("nvim-0.5.0") || has("patch-8.1.1564")
+    "     set signcolumn=number
+    " else
+    "     set signcolumn=yes
+    " endif
 
 
 	" function! CustomFold()
